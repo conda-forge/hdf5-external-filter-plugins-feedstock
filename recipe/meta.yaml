@@ -36,7 +36,7 @@ outputs:
     script: build-bitshuffle.bat   # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}  # [not win]
 
   - name: {{ name|lower + '-bzip2' }}
     requirements:
@@ -54,7 +54,7 @@ outputs:
     script: build-bzip2.bat   # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}  # [not win]
 
   - name: {{ name|lower + '-lz4' }}
     requirements:
@@ -72,7 +72,7 @@ outputs:
     script: build-lz4.bat   # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
 
 about:
   home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
