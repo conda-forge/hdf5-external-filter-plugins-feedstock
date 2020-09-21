@@ -8,10 +8,12 @@ package:
 source:
   url: https://github.com/nexusformat/HDF5-External-Filter-Plugins/archive/v{{ version }}.tar.gz
   sha256: 3d0d93cb71e1f384e827fbc9808d72b0984195ab337cca697c66205e7c135b0d
+  patches:
+    - patches/0001-Disable-MSI-build.patch  # [win]
+    - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 2
-  skip: True  # [win]
+  number: 3
 
 requirements:
   run:
@@ -26,6 +28,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - hdf5
@@ -33,11 +36,11 @@ outputs:
       run:
         - hdf5
         - lz4-c
-    script: build-bitshuffle.sh   # [not win]
-    script: build-bitshuffle.bat   # [win]
+    script: build-bitshuffle.sh  # [not win]
+    script: build-bitshuffle.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}  # [not win]
 
   - name: {{ name|lower + '-bzip2' }}
     requirements:
@@ -45,17 +48,18 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - bzip2
         - hdf5
       run:
         - bzip2
-    script: build-bzip2.sh   # [not win]
-    script: build-bzip2.bat   # [win]
+    script: build-bzip2.sh  # [not win]
+    script: build-bzip2.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}  # [not win]
 
   - name: {{ name|lower + '-lz4' }}
     requirements:
@@ -63,23 +67,29 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - hdf5
         - lz4-c
       run:
         - lz4-c
-    script: build-lz4.sh   # [not win]
-    script: build-lz4.bat   # [win]
+    script: build-lz4.sh  # [not win]
+    script: build-lz4.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}
+        - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
 
 about:
   home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
-  license: various
+  license: MIT AND LicenseRef-HDF5 AND BSD-3-Clause
   license_family: OTHER
-  license_file: resources/LICENSE.txt
+  license_file:
+    - licenses/bitshuffle.txt
+    - licenses/bzip2.txt
+    - licenses/bzip2-additional-legal.txt
+    - licenses/lz4.txt
+    - licenses/lz4-h5py-Copyrights-and-Licenses.txt
   summary: |
     Provides dynamically loadable compression filters for HDF5 that are
     popular for photon or neutron science
