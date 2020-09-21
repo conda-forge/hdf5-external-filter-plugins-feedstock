@@ -82,9 +82,14 @@ outputs:
 
 about:
   home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
-  license: various
+  license: MIT AND LicenseRef-HDF5 AND BSD-3-Clause
   license_family: OTHER
-  license_file: resources/LICENSE.txt
+  license_file:
+    - licenses/bitshuffle.txt
+    - licenses/bzip2.txt
+    - licenses/bzip2-additional-legal.txt
+    - licenses/lz4.txt
+    - licenses/lz4-h5py-Copyrights-and-Licenses.txt
   summary: |
     Provides dynamically loadable compression filters for HDF5 that are
     popular for photon or neutron science
