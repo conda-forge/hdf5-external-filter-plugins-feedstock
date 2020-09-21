@@ -3,7 +3,7 @@ About hdf5-external-filter-plugins
 
 Home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
 
-Package license: various
+Package license: MIT AND LicenseRef-HDF5 AND BSD-3-Clause
 
 Feedstock license: BSD-3-Clause
 
