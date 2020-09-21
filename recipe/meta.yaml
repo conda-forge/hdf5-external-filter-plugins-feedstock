@@ -10,6 +10,7 @@ source:
   sha256: 3d0d93cb71e1f384e827fbc9808d72b0984195ab337cca697c66205e7c135b0d
   patches:
     - patches/0001-Disable-MSI-build.patch  # [win]
+    - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
   number: 3
