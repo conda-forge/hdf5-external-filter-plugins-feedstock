@@ -27,6 +27,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - hdf5
@@ -34,8 +35,8 @@ outputs:
       run:
         - hdf5
         - lz4-c
-    script: build-bitshuffle.sh   # [not win]
-    script: build-bitshuffle.bat   # [win]
+    script: build-bitshuffle.sh  # [not win]
+    script: build-bitshuffle.bat  # [win]
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}  # [not win]
@@ -46,14 +47,15 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - bzip2
         - hdf5
       run:
         - bzip2
-    script: build-bzip2.sh   # [not win]
-    script: build-bzip2.bat   # [win]
+    script: build-bzip2.sh  # [not win]
+    script: build-bzip2.bat  # [win]
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}  # [not win]
@@ -64,14 +66,15 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
+        - conda-verify
         - make  # [not win]
       host:
         - hdf5
         - lz4-c
       run:
         - lz4-c
-    script: build-lz4.sh   # [not win]
-    script: build-lz4.bat   # [win]
+    script: build-lz4.sh  # [not win]
+    script: build-lz4.bat  # [win]
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
