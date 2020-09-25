@@ -13,7 +13,7 @@ source:
     - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   run:
@@ -41,6 +41,8 @@ outputs:
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}  # [not win]
+        - test -f $PREFIX/lib/plugins/libh5bshuf.so                           # [not win]
+        - if not exist %PREFIX%\\lib\\plugins\\h5bshuf.dll exit 1             # [win]
 
   - name: {{ name|lower + '-bzip2' }}
     requirements:
@@ -60,6 +62,8 @@ outputs:
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}  # [not win]
+        - test -f $PREFIX/lib/plugins/libh5bz2.so                        # [not win]
+        - if not exist %PREFIX%\\lib\\plugins\\h5bz2.dll exit 1          # [win]
 
   - name: {{ name|lower + '-lz4' }}
     requirements:
@@ -79,6 +83,8 @@ outputs:
     test:
       commands:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
+        - test -f $PREFIX/lib/plugins/libh5lz4.so                      # [not win]
+        - if not exist %PREFIX%\\lib\\plugins\\h5lz4.dll exit 1        # [win]
 
 about:
   home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
