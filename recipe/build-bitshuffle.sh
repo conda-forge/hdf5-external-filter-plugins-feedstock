@@ -12,3 +12,6 @@ cmake \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DCMAKE_INSTALL_PREFIX=$PREFIX
 make install
+
+mkdir -p $PREFIX/lib/hdf5/plugin
+cp $PREFIX/lib/plugins/libh5bshuf.so $PREFIX/lib/hdf5/plugin
