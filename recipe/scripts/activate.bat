@@ -1,0 +1,4 @@
+@if defined HDF5_PLUGIN_PATH (
+  @set "_CONDA_SET_HDF5_PLUGIN_PATH=%HDF5_PLUGIN_PATH%"
+)
+@set "HDF5_PLUGIN_PATH=%CONDA_PREFIX%/lib/plugins;%ALLUSERSPROFILE%/hdf5/lib/plugin"
