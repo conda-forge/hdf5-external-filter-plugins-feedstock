@@ -34,6 +34,7 @@ outputs:
         - hdf5
         - lz4-c
       run:
+        - {{ pin_subpackage(name|lower + '-activation', exact=True) }}
         - hdf5
         - lz4-c
     script: build-bitshuffle.sh  # [not win]
@@ -56,6 +57,7 @@ outputs:
         - bzip2
         - hdf5
       run:
+        - {{ pin_subpackage(name|lower + '-activation', exact=True) }}
         - bzip2
     script: build-bzip2.sh  # [not win]
     script: build-bzip2.bat  # [win]
@@ -77,6 +79,7 @@ outputs:
         - hdf5
         - lz4-c
       run:
+        - {{ pin_subpackage(name|lower + '-activation', exact=True) }}
         - lz4-c
     script: build-lz4.sh  # [not win]
     script: build-lz4.bat  # [win]
@@ -85,6 +88,14 @@ outputs:
         - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
         - test -f $PREFIX/lib/plugins/libh5lz4.so                      # [not win]
         - if not exist %PREFIX%\\lib\\plugins\\h5lz4.dll exit 1        # [win]
+
+  - name: {{ name|lower + '-activation' }}
+    script: build-activation.sh  # [not win]
+    script: build-activation.bat  # [win]
+    test:
+      commands:
+        - test -n "$HDF5_PLUGIN_PATH"             # [not win]
+        - if not defined HDF5_PLUGIN_PATH exit 1  # [win]
 
 about:
   home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
@@ -105,8 +116,6 @@ about:
     core library without recompiling your application. This package
     provides external filters for HDF5 for the Bitshuffle, BZIP2,
     and LZ4 compression algorithms.
-  doc_url: https://github.com/nexusformat/HDF5-External-Filter-Plugins
-  dev_url: https://github.com/nexusformat/HDF5-External-Filter-Plugins
 
 extra:
   recipe-maintainers:
