@@ -105,8 +105,6 @@ about:
     core library without recompiling your application. This package
     provides external filters for HDF5 for the Bitshuffle, BZIP2,
     and LZ4 compression algorithms.
-  doc_url: https://github.com/nexusformat/HDF5-External-Filter-Plugins
-  dev_url: https://github.com/nexusformat/HDF5-External-Filter-Plugins
 
 extra:
   recipe-maintainers:
