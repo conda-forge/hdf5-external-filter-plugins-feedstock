@@ -13,7 +13,7 @@ source:
     - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   run:
@@ -40,7 +40,6 @@ outputs:
     script: build-bitshuffle.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bitshuffle' }}  # [not win]
         - test -f $PREFIX/lib/plugins/libh5bshuf.so                           # [not win]
         - test -f $PREFIX/lib/hdf5/plugin/libh5bshuf.so                       # [not win]
         - if not exist %PREFIX%\\lib\\plugins\\h5bshuf.dll exit 1             # [win]
@@ -63,7 +62,6 @@ outputs:
     script: build-bzip2.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-bzip2' }}  # [not win]
         - test -f $PREFIX/lib/plugins/libh5bz2.so                        # [not win]
         - test -f $PREFIX/lib/hdf5/plugin/libh5bz2.so                    # [not win]
         - if not exist %PREFIX%\\lib\\plugins\\h5bz2.dll exit 1          # [win]
@@ -86,7 +84,6 @@ outputs:
     script: build-lz4.bat  # [win]
     test:
       commands:
-        - conda inspect linkages -p $PREFIX {{ name|lower + '-lz4' }}  # [not win]
         - test -f $PREFIX/lib/plugins/libh5lz4.so                      # [not win]
         - test -f $PREFIX/lib/hdf5/plugin/libh5lz4.so                  # [not win]
         - if not exist %PREFIX%\\lib\\plugins\\h5lz4.dll exit 1        # [win]
