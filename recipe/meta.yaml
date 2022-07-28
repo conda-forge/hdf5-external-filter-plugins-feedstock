@@ -13,7 +13,7 @@ source:
     - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 8
+  number: 9
 
 requirements:
   run:
