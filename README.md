@@ -1,11 +1,11 @@
-About hdf5-external-filter-plugins
-==================================
+About hdf5-external-filter-plugins-feedstock
+============================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hdf5-external-filter-plugins-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/nexusformat/HDF5-External-Filter-Plugins
 
 Package license: MIT AND LicenseRef-HDF5 AND BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hdf5-external-filter-plugins-feedstock/blob/main/LICENSE.txt)
 
 Summary: Provides dynamically loadable compression filters for HDF5 that are
 popular for photon or neutron science
