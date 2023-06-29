@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 hdf5:
-- 1.14.0
+- 1.14.1
 lz4_c:
 - 1.9.3
 target_platform:
