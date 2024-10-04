@@ -2,6 +2,8 @@ bzip2:
 - '1'
 c_compiler:
 - vs2019
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
@@ -9,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 hdf5:
-- 1.14.2
+- 1.14.4
 lz4_c:
 - 1.9.3
 target_platform:
