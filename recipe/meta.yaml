@@ -13,7 +13,7 @@ source:
     - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 12
+  number: 13
 
 requirements:
   run:
@@ -26,6 +26,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
         - make  # [not win]
@@ -46,6 +47,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
         - make  # [not win]
@@ -66,6 +68,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - cmake >=3.0.0
         - make  # [not win]
