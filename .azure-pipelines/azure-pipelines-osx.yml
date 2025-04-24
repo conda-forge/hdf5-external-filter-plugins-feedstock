@@ -8,17 +8,17 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_hdf51.14.3:
-        CONFIG: osx_64_hdf51.14.3
-        UPLOAD_PACKAGES: 'True'
       osx_64_hdf51.14.4:
         CONFIG: osx_64_hdf51.14.4
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_hdf51.14.3:
-        CONFIG: osx_arm64_hdf51.14.3
+      osx_64_hdf51.14.6:
+        CONFIG: osx_64_hdf51.14.6
         UPLOAD_PACKAGES: 'True'
       osx_arm64_hdf51.14.4:
         CONFIG: osx_arm64_hdf51.14.4
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.6:
+        CONFIG: osx_arm64_hdf51.14.6
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}
