@@ -15,13 +15,14 @@ source:
 build:
   number: 16
 
-requirements:
-  run:
-    - {{ pin_subpackage(name|lower + '-bitshuffle', exact=True) }}
-    - {{ pin_subpackage(name|lower + '-bzip2', exact=True) }}
-    - {{ pin_subpackage(name|lower + '-lz4', exact=True) }}
-
 outputs:
+  - name: {{ name|lower }}
+    requirements:
+      run:
+        - {{ pin_subpackage(name|lower + '-bitshuffle', exact=True) }}
+        - {{ pin_subpackage(name|lower + '-bzip2', exact=True) }}
+        - {{ pin_subpackage(name|lower + '-lz4', exact=True) }}
+
   - name: {{ name|lower + '-bitshuffle' }}
     requirements:
       build:
