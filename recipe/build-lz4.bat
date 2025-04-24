@@ -6,6 +6,7 @@ cmake %CMAKE_ARGS% ^
   -DENABLE_LZ4_PLUGIN=yes ^
   -DENABLE_BZIP2_PLUGIN=no ^
   -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
   .. || exit /b 1
 ninja install || exit /b 1
 

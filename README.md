@@ -36,13 +36,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_hdf51.14.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf51.14.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_hdf51.14.4</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
@@ -50,10 +43,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_hdf51.14.3</td>
+              <td>linux_64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf51.14.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -64,10 +57,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_hdf51.14.3</td>
+              <td>osx_64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_hdf51.14.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -78,10 +71,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_hdf51.14.3</td>
+              <td>osx_arm64_hdf51.14.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=win&configuration=win%20win_64_hdf51.14.3" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -89,6 +82,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=win&configuration=win%20win_64_hdf51.14.4" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_hdf51.14.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8427&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/hdf5-external-filter-plugins-feedstock?branchName=main&jobName=win&configuration=win%20win_64_hdf51.14.6" alt="variant">
                 </a>
               </td>
             </tr>

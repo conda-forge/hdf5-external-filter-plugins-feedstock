@@ -13,15 +13,16 @@ source:
     - patches/0002-Do-not-distribute-VC-runtimes.patch  # [win]
 
 build:
-  number: 15
-
-requirements:
-  run:
-    - {{ pin_subpackage(name|lower + '-bitshuffle', exact=True) }}
-    - {{ pin_subpackage(name|lower + '-bzip2', exact=True) }}
-    - {{ pin_subpackage(name|lower + '-lz4', exact=True) }}
+  number: 16
 
 outputs:
+  - name: {{ name|lower }}
+    requirements:
+      run:
+        - {{ pin_subpackage(name|lower + '-bitshuffle', exact=True) }}
+        - {{ pin_subpackage(name|lower + '-bzip2', exact=True) }}
+        - {{ pin_subpackage(name|lower + '-lz4', exact=True) }}
+
   - name: {{ name|lower + '-bitshuffle' }}
     requirements:
       build:
