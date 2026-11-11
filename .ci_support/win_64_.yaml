@@ -13,6 +13,6 @@ cxx_compiler:
 hdf5:
 - 1.14.6
 lz4_c:
-- '1.10'
+- '1.11'
 target_platform:
 - win-64
